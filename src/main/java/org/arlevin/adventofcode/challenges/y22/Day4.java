@@ -33,10 +33,12 @@ public class Day4 implements DailyChallenge {
       }
 
       boolean oneWhollyContainsTwo = true;
-      for (int task : assignment2) {
-        if (!assignment1.contains(task)) {
-          oneWhollyContainsTwo = false;
-          break;
+      if (!twoWhollyContainsOne) {
+        for (int task : assignment2) {
+          if (!assignment1.contains(task)) {
+            oneWhollyContainsTwo = false;
+            break;
+          }
         }
       }
 
@@ -63,10 +65,12 @@ public class Day4 implements DailyChallenge {
       }
 
       boolean anyOverlap2 = false;
-      for (int task : assignment2) {
-        if (assignment1.contains(task)) {
-          anyOverlap2 = true;
-          break;
+      if (!anyOverlap1) {
+        for (int task : assignment2) {
+          if (assignment1.contains(task)) {
+            anyOverlap2 = true;
+            break;
+          }
         }
       }
 
